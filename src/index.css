@@ -14,8 +14,8 @@
   --text-heading-1: clamp(3.5rem, 2.3571rem + 5.5143vi, 10.5rem);
   --text-heading-display: clamp(4rem, 1.203rem + 10.0714vw, 10.25rem);
   --text-heading-body: clamp(1rem, 0.6071rem + 1.0143vi, 2.25rem);
-  --text-heading-1--alt: clamp(3rem, 2.25rem + 3.75vi, 5.625rem);
-  --padding-horizontal--main: clamp(1rem, 0.428rem + 2.86vw, 3rem);
+  --text-heading-1-alt: clamp(3rem, 2.25rem + 3.75vi, 5.625rem);
+  --padding-horizontal-main: clamp(1rem, 0.428rem + 2.86vw, 3rem);
   --padding-v: clamp(0.89rem, 0.862rem + 0.14vw, 0.99rem);
   --padding-button: clamp(0.89rem, 0.7rem + 0.14vw, 0.88rem);
   --padding-top--main: clamp(1rem, 1.8571rem + 1.5143vi, 3.5rem);
@@ -102,7 +102,13 @@ body {
 }
 
 .section-heading {
-  font-size: var(--text-heading-1);
+  text-wrap: balance;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.section-heading-mobile {
   text-wrap: balance;
   font-weight: 600;
   text-transform: uppercase;

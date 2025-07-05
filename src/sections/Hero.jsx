@@ -1,4 +1,4 @@
-import imgProfile from '../assets/profilepic.jpg';
+import imgProfile from '/profilepic.jpg';
 import TextAnimate from '../components/atoms/textAnimate';
 import Arrow from '../components/icons/Arrow';
 import { HeroImg } from '../components/icons/heroImg';
@@ -6,8 +6,8 @@ import { HeroImg } from '../components/icons/heroImg';
 
 export default function Hero({ ...props }) {
     return (
-        <div className='fixed inset-0 -z-2 '{...props} >
-            <div className='flex flex-col justify-end-safe gap-12 md:gap-0 w-full h-full absolute left-0 px-8 md:px-16'>
+        <div className='fixed inset-0 -z-10 pointer-events-auto'{...props} >
+            <div className='flex flex-col justify-end-safe gap-12 md:gap-0 w-full h-screen left-0 px-8 md:px-16'>
 
                 <div className='mt-0 md:mt-20 h-full flex items-baseline-last md:items-center overflow-clip'>
                     <h1 className='sr-only'>I'm BamBam</h1>

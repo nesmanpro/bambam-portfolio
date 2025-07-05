@@ -5,7 +5,7 @@ export default function SectionLayout({ id, title, subtitle, description, extra,
     return (
         <section id={id} className={twMerge('px-8 pt-20', className)}>
             <header className='flex flex-col w-full gap-y-10 md:gap-y-22'>
-                <h1 className='text-5xl font-bold uppercase sm:section-heading leading-[.8em] '>{title} {extra && <span className='text-heading-2'>{extra}</span>}</h1>
+                <h1 className=' font-bold uppercase section-heading text-heading-1-alt sm:text-heading-1 leading-[.8em] '>{title} {extra && <span className='text-heading-2'>{extra}</span>}</h1>
 
                 <div className='flex grid-cols-12 gap md:grid gap-fluid'>
                     <div className='flex col-span-7 flex-col sm:flex-row md:col-start-6 gap-x-15 gap-y-6'>
