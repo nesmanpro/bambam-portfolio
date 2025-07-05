@@ -32,7 +32,7 @@ const worksItems = [
         bgImg: '/assets/10.jpg'
     },
     {
-        title: "let's or not",
+        title: "Do the right things!",
         subtitle: 'Artist Atelier',
         categories: ['photography', 'branding'],
         year: '2025',
