@@ -49,9 +49,11 @@ export default function TextAnimate({ children, className }) {
     return (
         <div
             ref={containerRef}
-            className={twMerge("relative inline-flex overflow-hidden cursor-pointer", className)}
+            className={twMerge("relative  overflow-hidden cursor-pointer", className)}
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
+            onTouchStart={handleEnter}
+            onTouchEnd={handleLeave}
         >
             <span
                 ref={outRef}
@@ -60,7 +62,7 @@ export default function TextAnimate({ children, className }) {
             </span>
             <span
                 ref={inRef}
-                className="absolute inset-0 opacity-50"
+                className="absolute inset-0 opacity-60 hidden sm:flex"
             >
                 {children}
             </span>
