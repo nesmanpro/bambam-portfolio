@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+
+  --text-mono: clamp(0.6rem, 0.5143rem + 0.3571vi, 0.9rem);
+  --text-base-small: clamp(0.875rem, 0.5393rem + 0.5786vi, 1rem);
+  --text-base: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+  --text-base-large: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
+  --text-heading-6: clamp(1rem, 0.928rem + 0.36vw, 1.25rem);
+  --text-heading-5: clamp(1.13rem, 1.004rem + 0.63vw, 1.57rem);
+  --text-heading-4: clamp(1.25rem, 1.0359rem + 1.0707vi, 1.9995rem);
+  --text-heading-3: clamp(1.5625rem, 1.2474rem + 1.5755vi, 2.6653rem);
+  --text-heading-2: clamp(1.9531rem, 1.496rem + 2.2854vi, 3.5529rem);
+  --text-heading-1: clamp(3.5rem, 2.3571rem + 5.5143vi, 10.5rem);
+  --text-heading-display: clamp(4rem, 1.203rem + 10.0714vw, 10.25rem);
+  --text-heading-body: clamp(1rem, 0.6071rem + 1.0143vi, 2.25rem);
+  --text-heading-1--alt: clamp(3rem, 2.25rem + 3.75vi, 5.625rem);
+  --padding-horizontal--main: clamp(1rem, 0.428rem + 2.86vw, 3rem);
+  --padding-v: clamp(0.89rem, 0.862rem + 0.14vw, 0.99rem);
+  --padding-button: clamp(0.89rem, 0.7rem + 0.14vw, 0.88rem);
+  --padding-top--main: clamp(1rem, 1.8571rem + 1.5143vi, 3.5rem);
+  --spacing-space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+  --spacing-space-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vi, 0.625rem);
+  --spacing-space-xs: clamp(0.875rem, 0.8571rem + 0.0893vi, 0.9375rem);
+  --spacing-space-sm: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
+  --spacing-space-md: clamp(1.6875rem, 1.6339rem + 0.2679vi, 1.875rem);
+  --spacing-space-lg: clamp(2.25rem, 2.1786rem + 0.3571vi, 2.5rem);
+  --spacing-space-xl: clamp(3.375rem, 3.2679rem + 0.5357vi, 3.75rem);
+  --spacing-space-2xl: clamp(4.5rem, 4.3571rem + 0.7143vi, 5rem);
+  --spacing-space-3xl: clamp(5.25rem, 5.8571rem + 0.9023vi, 6.25rem);
+  --gap-fluid: clamp(1rem, 0.8571rem + 1.0143vi, 3.5rem);
+  --column-count: 12;
+  --grid-main: repeat(var(--column-count), minmax(0, 1fr));
+  --grid-gap-total: calc(var(--gap-fluid) * (var(--column-count) - 1));
+  --column-width: calc((100% - var(--grid-gap-total)) / var(--column-count) + var(--gap-fluid));
+}
+
+
+:root {
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #414141;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: rgb(150, 150, 150);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overscroll-behavior: none;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100svh;
+}
+
+
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+
+  .text-neue {
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+
+  .gap-fluid {
+    column-gap: var(--gap-fluid);
+  }
+
+  .ease-expo {
+    transition-timing-function: cubic-bezier(.16, 1, .3, 1);
+  }
+}
+
+.section-heading {
+  font-size: var(--text-heading-1);
+  text-wrap: balance;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
