@@ -56,13 +56,14 @@ export default function TextAnimate({ children, className }) {
             onTouchEnd={handleLeave}
         >
             <span
+
                 ref={outRef}
             >
                 {children}
             </span>
             <span
                 ref={inRef}
-                className="absolute inset-0 opacity-60"
+                className="absolute inset-0 opacity-60 translate-y-full"
             >
                 {children}
             </span>
