@@ -4,19 +4,19 @@ import TextAnimate from "./atoms/textAnimate";
 const navItems = [
     {
         url: '#service',
-        label: 'service'
+        label: 'Service'
     },
     {
         url: '#work',
-        label: 'work'
+        label: 'Work'
     },
     {
         url: '#about',
-        label: 'about'
+        label: 'About'
     },
     {
         url: '#contact',
-        label: 'contact'
+        label: 'Contact'
     },
 ]
 

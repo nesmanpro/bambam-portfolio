@@ -63,7 +63,7 @@ export default function TextAnimate({ children, className }) {
             </span>
             <span
                 ref={inRef}
-                className="absolute inset-0 opacity-60 translate-y-full"
+                className="absolute inset-0 opacity-60 translate-y-full capitalize"
             >
                 {children}
             </span>
