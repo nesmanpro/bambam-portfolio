@@ -89,7 +89,7 @@ function App() {
     <div ref={containerRef} id='home' className='w-screen h-screen z-0 relative '>
       <Navbar className=' px-8 md:px-17' />
       <MenuBtn ref={menuBtnRef} />
-      <div className='h-svh  w-screen pointer-events-none'>
+      <div className='h-svh -mb-[142px] md:-mb-[116px] lg:-mb-[92px] w-screen pointer-events-none'>
         <Hero ref={heroRef} />
       </div>
       <div ref={sectionRef} className="trigger bg-amber-300  rounded-3xl">
