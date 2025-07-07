@@ -87,10 +87,13 @@ function App() {
 
   return (
     <div ref={containerRef} id='home' className='w-screen h-screen z-0 relative '>
-      <Navbar className=' px-8 md:px-17' />
+      <header className='tracking-body absolute top-0 z-40 w-full '>
+        <Navbar className='px-8 md:px-17' />
+      </header>
       <MenuBtn ref={menuBtnRef} />
-      <div className='h-dvh -mb-[142px] md:-mb-[116px] lg:-mb-[92px] w-screen pointer-events-none'>
+      <div className='mb-[-100svh] w-screen pointer-events-none'>
         <Hero ref={heroRef} />
+        <div className='h-svh'></div>
       </div>
       <div ref={sectionRef} className="trigger bg-amber-300  rounded-3xl">
         <Services />
