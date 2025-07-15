@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import TextAnimate from "./atoms/textAnimate";
+import TextAnimate from "../atoms/textAnimate";
 
 const navItems = [
     {
@@ -34,8 +34,10 @@ export default function Navbar({ className }) {
 
                     <li key={itm.label}>
                         <a href={itm.url}>
-                            <TextAnimate className="font-normal capitalize">
-                                {itm.label}
+                            <TextAnimate className="">
+                                <span className="font-normal capitalize 2xl:text-xl">
+                                    {itm.label}
+                                </span>
                             </TextAnimate>
                         </a>
                     </li>

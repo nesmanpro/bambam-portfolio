@@ -28,19 +28,19 @@ const navItems = [
 
 const socialItems = [
     {
-        url: '#service',
+        url: 'https://www.instagram.com/nesmanpro/',
         label: 'instagram'
     },
     {
-        url: '#work',
+        url: 'https://www.linkedin.com/in/lucasroquecugiani/',
         label: 'linkedin'
     },
     {
-        url: '#about',
+        url: 'https://www.behance.net/nesmanpro',
         label: 'behance'
     },
     {
-        url: '#contact',
+        url: 'https://github.com/nesmanpro',
         label: 'github'
     },
 ]
@@ -56,8 +56,10 @@ export const Footer = () => {
                         {navItems.map(item => (
                             <li key={item.label}>
                                 <a className='leading-none ' href={item.url}>
-                                    <TextAnimate className={'capitalize text-[.85em] font-normal leading-space-sm text-gray-950/40'}>
-                                        {item.label}
+                                    <TextAnimate>
+                                        <span className='capitalize text-[.85em] font-normal leading-space-sm text-gray-950/40'>
+                                            {item.label}
+                                        </span>
                                     </TextAnimate>
                                 </a>
                             </li>
@@ -70,9 +72,11 @@ export const Footer = () => {
                     <ul className='flex flex-col'>
                         {socialItems.map(item => (
                             <li key={item.label}>
-                                <a className='leading-none ' href={item.url}>
-                                    <TextAnimate className={'capitalize text-[.85em] font-normal leading-space-sm text-gray-950/40'}>
-                                        {item.label}
+                                <a className='leading-none' target='_blank' href={item.url}>
+                                    <TextAnimate className={''}>
+                                        <span className='capitalize text-[.85em] font-normal leading-space-sm text-gray-950/40'>
+                                            {item.label}
+                                        </span>
                                     </TextAnimate>
                                 </a>
                             </li>

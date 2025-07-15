@@ -2,7 +2,11 @@
 
 @theme {
 
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+
   --text-mono: clamp(0.6rem, 0.5143rem + 0.3571vi, 0.9rem);
+  --text-menu: clamp(2.5rem, 1.107rem + 3.5714vi, 4.5rem);
   --text-base-small: clamp(0.875rem, 0.5393rem + 0.5786vi, 1rem);
   --text-base: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
   --text-base-large: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
@@ -48,16 +52,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #414141;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: rgb(150, 150, 150);
 }
 
 html {
@@ -113,4 +107,14 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   transition: all 0.5s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
