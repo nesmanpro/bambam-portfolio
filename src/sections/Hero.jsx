@@ -21,6 +21,7 @@ export default function Hero({ ...props }) {
     const imgRef = useRef()
 
     useGSAP(() => {
+        // if (!contRef.current) return
 
         const tl = gsap.timeline({
             defaults: {
@@ -90,7 +91,7 @@ export default function Hero({ ...props }) {
                             &copy;
                         </span>
                     </h1>
-                    <HeroImg svgRef={svgRef} className='hero-svg w-full text-gray-900 hidden md:block' />
+                    <HeroImg svgRef={svgRef} className='mobile-landscape hero-svg w-full text-gray-900 hidden md:block' />
                 </div>
 
 
@@ -98,7 +99,7 @@ export default function Hero({ ...props }) {
 
                     <div className='col-span-12 flex flex-col justify-between gap-y-space-2xl pt-space-sm md:col-span-4 md:gap-y-space-md overflow-hidden'>
                         <p className='sr-only'>I craft high-impact websites that give companies and growing brands a competitive edge.</p>
-                        <div ref={arrowRef} className='hidden md:block pointer-events-auto'>
+                        <div ref={arrowRef} className='hidden mobile-landscape md:block pointer-events-auto'>
 
                             <TextAnimate>
                                 <Arrow className='size-8 text-gray-900/50 rotate-135' />

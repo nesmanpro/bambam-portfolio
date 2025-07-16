@@ -118,3 +118,10 @@ body {
     opacity: 1;
   }
 }
+
+
+@media (height <=500px) and (orientation: landscape) {
+  .mobile-landscape {
+    display: none;
+  }
+}
