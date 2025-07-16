@@ -80,7 +80,7 @@ export default function Hero({ ...props }) {
     }, { scope: contRef.current })
 
     return (
-        <section ref={contRef} className='sticky inset-0 h-svh -z-10 items-end '{...props} >
+        <section ref={contRef} className='sticky inset-0 h-svh -z-10 items-end portrait:pb-2 '{...props} >
             <div className='flex flex-col h-svh md:gap-y-space-lg md:gap-0 w-full left-0 p-space-md  md:px-16'>
 
                 <div className='mt-0 md:mt-20 h-full flex items-baseline-last md:items-center overflow-clip'>
