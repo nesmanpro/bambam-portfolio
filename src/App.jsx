@@ -38,7 +38,7 @@ function App() {
       </header>
       <SideMenu />
       <MenuBtn ref={menuBtnRef} />
-      <div className='mb-[-100svh] w-screen pointer-events-none'>
+      <div className='mb-[-100svh] w-screen h-[200svh] pointer-events-none'>
         <Hero ref={heroRef} />
         <div className='h-svh'></div>
       </div>
