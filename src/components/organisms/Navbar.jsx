@@ -24,7 +24,7 @@ const navItems = [
 export default function Navbar({ className }) {
 
     return (
-        <div className={twMerge('flex py-4 justify-between items-center w-full md:py-8', className)}>
+        <div className={twMerge('flex py-1 sm:py-4 justify-between items-center w-full md:py-8', className)}>
             <div className='flex flex-col lg:flex-row lg:items-center lg:gap-15 '>
                 <div className='font-bold text-xl relative text-gray-900/90'>ImBamBam <small className='absolute '>&copy;</small></div>
                 <p className="text-gray-900/90 w-34 md:w-fit">(Graphic Designer & Web Developer)</p>
