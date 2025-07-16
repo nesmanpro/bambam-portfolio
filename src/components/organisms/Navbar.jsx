@@ -29,7 +29,7 @@ export default function Navbar({ className }) {
                 <div className='font-bold text-xl relative text-gray-900/90'>ImBamBam <small className='absolute '>&copy;</small></div>
                 <p className="text-gray-900/90 w-34 md:w-fit">(Graphic Designer & Web Developer)</p>
             </div>
-            <ul className='flex flex-col gap-1 landscape:flex-row md:flex-row md:gap-5 '>
+            <ul className='flex flex-col gap-1 landscape:flex-row landscape:gap-3 md:flex-row md:gap-5 '>
                 {navItems.map(itm => (
 
                     <li key={itm.label}>
