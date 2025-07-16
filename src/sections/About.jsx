@@ -1,9 +1,63 @@
 import Arrow from "../components/icons/Arrow"
 import imgProfile from '/profilepic.jpg';
+import { CustomEase } from "gsap/CustomEase";
+import { gsap } from "gsap";
+import { useGSAP } from '@gsap/react'
+import { useRef } from 'react'
+import { splitTextElements } from "../animations/SplitText";
+
+gsap.registerPlugin(useGSAP, CustomEase);
+CustomEase.create('hop', '.8, 0, .3, 1');
 
 export const About = () => {
+    const contRef = useRef()
+
+    useGSAP(() => {
+        const title = contRef.current.querySelector('header h1');
+        const subtitle = contRef.current.querySelector('.split-subtitle');
+        const description = contRef.current.querySelector('.split-description');
+
+        splitTextElements(title, 'lines, words, chars')
+        splitTextElements(subtitle, 'lines')
+
+        gsap.from(title.querySelectorAll('.char span'), {
+            y: 100,
+            opacity: 0,
+            ease: 'hop',
+            stagger: 0.03,
+            duration: 0.3,
+            scrollTrigger: {
+                trigger: title,
+                start: 'bottom 95%',
+            }
+        })
+        gsap.from(subtitle.querySelectorAll('.line span'), {
+            y: 100,
+            opacity: 0,
+            ease: 'hop',
+            stagger: 0.1,
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: subtitle,
+                start: 'bottom 95%',
+            }
+        })
+        gsap.from(description, {
+            y: 100,
+            opacity: 0,
+            ease: 'hop',
+            duration: 1,
+            scrollTrigger: {
+                trigger: description,
+                start: '30% 95%',
+            }
+        })
+
+    }, { scope: contRef.current })
+
+
     return (
-        <section id='about' className='px-8 pt-20 pb-space-3xl flex flex-col w-full gap-y-10 md:gap-y-22'>
+        <section ref={contRef} id='about' className='px-8 pt-20 pb-space-3xl flex flex-col w-full gap-y-10 md:gap-y-22'>
 
             <header className="grid grid-cols-12 gap-x-fluid">
                 <Arrow className='hidden lg:flex size-20 rotate-135' />
@@ -19,10 +73,10 @@ export const About = () => {
 
                 <div className='col-span-7 col-start-6 flex flex-col gap-y-space-lg lg:gap-y-space-xl '>
                     <p className="sr-only">Developer with a strong foundation in graphic design, branding, and UI/UX design, fields in which I have over 15 years of experience.</p>
-                    <p aria-hidden='true' className='w-full max-w-[39ch] text-balance text-heading-5 font-medium leading-snug'>Developer with a strong foundation in graphic design, branding, and UI/UX design, fields in which I have over 15 years of experience.</p>
+                    <p className='split-subtitle w-full max-w-[39ch] text-balance text-heading-5 font-medium leading-snug'>Developer with a strong foundation in graphic design, branding, and UI/UX design, fields in which I have over 15 years of experience.</p>
                     <div className="flex flex-col gap-x-space-xl gap-y-space-sm lg:flex-row">
                         <p className='text-sm sm:text-base md:text-lg text-gray-900/80 font-mono uppercase flex-shrink-0 whitespace-nowrap'>(about me)</p>
-                        <div className="flex flex-col gap-y-space-md">
+                        <div className="split-description flex flex-col gap-y-space-md">
                             <p>I'm specialize in libraries and frameworks such as React, Next.js, Vite, Tailwind CSS, SASS, GSAP, and Framer Motion, working across both corporate environments and freelance projects over the past three years.</p>
                             <p>With the goal of delivering more comprehensive solutions, I began training in backend technologies. Since then, I've worked with Node.js, Express, and MongoDB, building APIs following *clean architecture* and microservices patterns. I've also integrated headless CMS solutions such as Strapi, WordPress, and Shopify, using databases like SQLite, PostgreSQL, and GraphQL to support client autonomy. Additionally, I have hands-on experience with containerized environments using Docker and Kubernetes for deployment, orchestration, and application scalability.
                             </p>

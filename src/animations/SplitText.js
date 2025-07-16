@@ -13,6 +13,10 @@ export const splitTextElements = (
     const element = gsap.utils.toArray(selector)
 
     element.forEach((el) => {
+
+        if (el._splitTextInstance) {
+            el._splitTextInstance.revert();
+        }
         const splitText = new SplitText(el, {
             type,
             linesClass: 'line',
@@ -20,17 +24,21 @@ export const splitTextElements = (
             charsClass: 'char'
         })
 
+        el._splitTextInstance = splitText;
+
         if (type.includes('chars')) {
             splitText.chars.forEach((char, idx) => {
-                const originalText = char.textContent;
-
-                char.innerHTML = `<span>${originalText}</span>`;
+                if (char.children.length === 0) {
+                    const originalText = char.textContent;
+                    char.innerHTML = `<span>${originalText}</span>`;
+                }
 
                 if (addFirstChar && idx === 0) {
                     char.classList.add('first-char')
                 }
             })
-        } else if (type.includes('lines')) {
+        }
+        else if (type.includes('lines')) {
             splitText.lines.forEach((line) => {
                 const originalText = line.textContent;
 
