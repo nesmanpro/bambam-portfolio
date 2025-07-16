@@ -120,7 +120,7 @@ body {
 }
 
 
-@media (height <=500px) and (orientation: landscape) {
+@media (height <=400px) and (orientation: landscape) {
   .mobile-landscape {
     display: none;
   }
