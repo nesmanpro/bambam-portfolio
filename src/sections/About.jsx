@@ -46,7 +46,7 @@ export const About = () => {
             y: 100,
             opacity: 0,
             ease: 'hop',
-            duration: 1,
+            duration: .5,
             scrollTrigger: {
                 trigger: description,
                 start: '30% 95%',

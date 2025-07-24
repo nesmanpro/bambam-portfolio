@@ -49,12 +49,12 @@ export default function Services() {
                     articles.map((art, idx) => (
                         <article
                             key={art.id}
-                            className={`border-t-1 border-gray-950/20 sticky bg-amber-300 min-h-[450px] md:min-h-[380px]`}
+                            className={`border-t-1 border-gray-950/20 sticky bg-amber-300 min-h-[450px] md:min-h-[380px] w-full`}
                             style={{
                                 top: `calc(100px + ${idx * 90}px)`,
                             }}
                         >
-                            <header className="flex grid-cols-12 items-center justify-start gap-x-space-xs text-left text-heading-2 font-semibold md:justify-between md:grid md:gap-x-fluid mb-space-md">
+                            <header className="flex grid-cols-12 items-center justify-start gap-x-space-xs text-left text-heading-3 sm:text-heading-2 font-semibold md:justify-between md:grid md:gap-x-fluid mb-space-md">
                                 <span className="col-span-2">({art.id})</span>
                                 <span className="col-span-6 col-start-6 py-space-md 2xl:py-space-sm leading-space-md">{art.title}</span>
                             </header>

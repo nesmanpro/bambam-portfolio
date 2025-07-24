@@ -42,7 +42,7 @@ function App() {
         <Hero ref={heroRef} />
         <div className='h-svh'></div>
       </div>
-      <div ref={sectionRef} className="trigger bg-amber-300  rounded-3xl">
+      <div ref={sectionRef} className="trigger bg-amber-300 rounded-3xl">
         <Services />
         <Works />
         <About />
