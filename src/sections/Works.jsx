@@ -21,36 +21,16 @@ const worksItems = [
     },
     {
         id: '2',
-        title: 'Ecommerce Filters',
-        subtitle: 'Vanilla JS, ',
-        categories: ['Testing', 'Development'],
-        year: '2025',
-        imgUrl: '/img/img-2.webp',
-        bgImg: '/assets/15.jpg',
-        url: 'https://avoris-ptech-waveless.vercel.app/'
+        title: "BAMBAM Talks",
+        subtitle: 'Vanilla JS, GSAP, SASS',
+        categories: ['UI-UX', 'Developing'],
+        year: '2024',
+        imgUrl: '/img/img-4.webp',
+        bgImg: '/assets/14.jpg',
+        url: 'https://js-vanilla-scroll-transitions.vercel.app/'
     },
     {
         id: '3',
-        title: 'BlueBrown Partners',
-        subtitle: 'Venture Capital',
-        categories: ['Design', 'branding'],
-        year: '2024',
-        imgUrl: '/img/img-3.webp',
-        bgImg: '/assets/12.jpg',
-        url: ''
-    },
-    {
-        id: '4',
-        title: "Do the right things!",
-        subtitle: 'Artist Atelier',
-        categories: ['photography', 'branding'],
-        year: '2025',
-        imgUrl: '/img/img-4.webp',
-        bgImg: '/assets/14.jpg',
-        url: ''
-    },
-    {
-        id: '5',
         title: "Dev Portfolio",
         subtitle: 'NextJS, Typescript, Tailwind, Framer Motion',
         categories: ['UI-UX', 'Developing'],
@@ -60,7 +40,7 @@ const worksItems = [
         url: 'https://github.com/nesmanpro/dev_Portfolio'
     },
     {
-        id: '6',
+        id: '4',
         title: "Nae Riviera Maya",
         subtitle: 'React, Vite, Tailwind',
         categories: ['UI-UX', 'Developing'],
@@ -70,14 +50,34 @@ const worksItems = [
         url: 'https://www.naerivieramaya.com/'
     },
     {
+        id: '5',
+        title: "Coffee Ecommerce",
+        subtitle: 'NextJS, Typescript, Tailwind, Zustand',
+        categories: ['UI-UX', 'Developing'],
+        year: '2025',
+        imgUrl: '/img/img-8.webp',
+        bgImg: '/assets/14.jpg',
+        url: 'https://github.com/nesmanpro/coffeeFront'
+    },
+    {
+        id: '6',
+        title: 'Ecommerce Filters',
+        subtitle: 'Vanilla JS, CSS, HTML',
+        categories: ['Testing', 'Development'],
+        year: '2025',
+        imgUrl: '/img/img-2.webp',
+        bgImg: '/assets/15.jpg',
+        url: 'https://github.com/nesmanpro/avoris-ptech-waveless'
+    },
+    {
         id: '7',
         title: 'Web Intro Animated ',
-        subtitle: 'React, GSAP, NextJS',
+        subtitle: 'NextJS, GSAP, Tailwind',
         categories: ['UI-UX', 'Development'],
         year: '2024',
         imgUrl: '/img/img-1.webp',
         bgImg: '/assets/14.jpg',
-        url: ''
+        url: 'https://github.com/nesmanpro/gsap-react_intro_animation'
     },
     {
         id: '8',
@@ -88,6 +88,16 @@ const worksItems = [
         imgUrl: '/img/img-7.webp',
         bgImg: '/assets/14.jpg',
         url: 'https://js-vanilla-gsap-animations.vercel.app/'
+    },
+    {
+        id: '9',
+        title: 'Menu Animation',
+        subtitle: 'Vanilla JS, Vite, GSAP',
+        categories: ['UI-UX', 'Developing'],
+        year: '2024',
+        imgUrl: '/img/img-3.webp',
+        bgImg: '/assets/12.jpg',
+        url: 'https://github.com/nesmanpro/vite-gsap-responsive-menu'
     },
 ]
 
