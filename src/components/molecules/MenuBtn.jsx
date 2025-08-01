@@ -53,14 +53,14 @@ export default function MenuBtn({ ref }) {
         <div className="fixed top-5 right-5 md:right-15 flex items-center gap-x-space-xs md:gap-x-space-md z-[999] scale-0"
             ref={ref}
         >
-            <button className='py-5 px-8 bg-amber-100 rounded-full cursor-pointer duration-1000 ease-expo hover:scale-90'>
+            <a href='mailto:hola@nesmanpro.com' className='py-5 px-8 bg-amber-100 rounded-full cursor-pointer duration-1000 ease-expo hover:scale-90'>
                 <TextAnimate>
                     <span className='flex items-center gap-2'>
                         Let's Talk
                         <Arrow className='size-4 rotate-45' />
                     </span>
                 </TextAnimate>
-            </button>
+            </a>
             <button onClick={handleClick} className='p-5 bg-amber-200 rounded-full cursor-pointer duration-1000 ease-expo hover:scale-90  relative w-16 h-16 '>
 
                 <span ref={firstLineRef} className="absolute translate-x-[-50%] translate-y-[-50%] top-[44%] left-[50%] w-7 h-0.5 bg-black" />

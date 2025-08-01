@@ -98,7 +98,7 @@ export default function Hero({ ...props }) {
                 <div className='grid w-full grid-cols-12 justify-between gap-x-fluid gap-y-space-md'>
 
                     <div className='col-span-12 flex flex-col justify-between gap-y-space-2xl pt-space-sm landscape:col-span-4 md:col-span-4 md:gap-y-space-md overflow-hidden'>
-                        <p className='sr-only'>I craft high-impact websites that give companies and growing brands a competitive edge.</p>
+                        <p className='sr-only'>I craft high-impact apps and websites that give companies and growing brands a competitive edge.</p>
                         <div ref={arrowRef} className='hidden mobile-landscape md:block pointer-events-auto'>
 
                             <TextAnimate>
@@ -108,14 +108,14 @@ export default function Hero({ ...props }) {
                         </div>
 
                         <div className='flex flex-col gap-y-space-sm md:gap-y-space-md'>
-                            <p aria-hidden='true' className='splitted-text w-full max-w-[30ch] text-balance text-base font-medium leading-snug xl:text-base-large 3xl:text-heading-body  text-gray-900/50 font-mono'>I craft high-impact websites that give companies and growing brands a competitive edge.</p>
+                            <p aria-hidden='true' className='splitted-text w-full max-w-[30ch] text-balance text-base font-medium leading-snug xl:text-base-large 3xl:text-heading-body  text-gray-900/50 font-mono'>I craft high-impact apps and websites that give companies and growing brands a competitive edge.</p>
                             <div ref={btnRef} className='overflow-hidden'>
                                 <button className='w-fit bg-gray-900/80 text-gray-50 px-5 py-2 rounded-full font-semibold pointer-events-auto'>
                                     <TextAnimate>
-                                        <div className='flex items-center gap-1'>
+                                        <a href='mailto:hola@nesmanpro.es' target='_blank' className='flex items-center gap-1'>
                                             Talk to Me
                                             <Arrow className='size-4 text-white rotate-45' />
-                                        </div>
+                                        </a>
                                     </TextAnimate>
                                 </button>
                             </div>

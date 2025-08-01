@@ -20,17 +20,10 @@ const navItems = [
         url: '#about',
         label: 'about'
     },
-    {
-        url: '#contact',
-        label: 'contact'
-    },
 ]
 
 const socialItems = [
-    {
-        url: 'https://www.instagram.com/nesmanpro/',
-        label: 'instagram'
-    },
+
     {
         url: 'https://www.linkedin.com/in/lucasroquecugiani/',
         label: 'linkedin'

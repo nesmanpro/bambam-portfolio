@@ -8,19 +8,20 @@ export const CustomCursor = ({ x, y, visible }) => {
     const textRef = useRef(null)
 
 
-
-
     useGSAP(() => {
         let tl = gsap.timeline({ defaults: { duration: 0.2, ease: 'bounce.inOut' } });
+        let mm = gsap.matchMedia();
 
-        if (visible) {
-            tl.to(cursorRef.current, {
-                scale: 1, opacity: 1
-            })
-        } else {
-            tl.to(cursorRef.current, { scale: 0, opacity: 0 })
+        mm.add('(min-width: 500px)', () => {
+            if (visible) {
+                tl.to(cursorRef.current, {
+                    scale: 1, opacity: 1
+                })
+            } else {
+                tl.to(cursorRef.current, { scale: 0, opacity: 0 })
+            }
+        })
 
-        }
     }, { dependencies: [visible] })
 
 
