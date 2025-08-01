@@ -33,8 +33,8 @@ export default function TextAnimate({ children, className }) {
             y: -100
         }, '+=<')
 
-
         tlRef.current = tl
+
     }, { scope: containerRef.current })
 
     const handleEnter = () => {

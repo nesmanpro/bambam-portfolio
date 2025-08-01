@@ -14,10 +14,6 @@ CustomEase.create('hop', '.8, 0, .3, 1');
 
 const socialLinks = [
     {
-        url: 'https://www.instagram.com/nesmanpro/',
-        label: 'instagram'
-    },
-    {
         url: 'https://www.linkedin.com/in/lucasroquecugiani/',
         label: 'linkedin'
     },
@@ -115,10 +111,10 @@ export default function SideMenu({ className }) {
                 className='pointer-events-none fixed z-50 hidden w-screen h-screen justify-end bg-gray-900/40'>
                 <div
                     ref={menuRef}
-                    className='pointer-events-auto z-20 flex max-w-2xl flex-col justify-end overflow-hidden rounded-md bg-gray-950 xl:max-w-3xl 3xl:max-w-4xl'>
+                    className='pointer-events-auto z-20 flex w-full sm:w-[clamp(25rem,40vw,70rem)] max-w-2xl flex-col justify-end overflow-hidden rounded-md bg-gray-900 xl:max-w-3xl 3xl:max-w-4xl'>
 
-                    <nav className='h-full px-space-md text-menu font-bold uppercase leading-tight sm:px-space-xl flex flex-col justify-center '>
-                        <ul className='flex flex-col gap-y-space-3xs'>
+                    <nav className='h-full px-space-md text-menu font-bold uppercase leading-tight sm:px-space-xl flex flex-col justify-center mt-15 sm:mt-0 '>
+                        <ul className='flex flex-col gap-y-0 sm:gap-y-space-3xs'>
 
                             {navItems.map((item) => (
                                 <li key={item.label} onClick={() => closeMenu()} className='group relative flex w-fit items-center text-yellow-100 cursor-pointer'>
@@ -130,7 +126,7 @@ export default function SideMenu({ className }) {
                             ))}
                         </ul>
                     </nav>
-                    <div className='flex flex-col items-start justify-start gap-y-space-md px-space-md sm:px-space-xl sm:pb-space-xl text-yellow-100'>
+                    <div className='flex flex-col items-start justify-start gap-y-space-sm px-space-md mb-space-sm sm:px-space-xl sm:pb-space-xl text-yellow-100'>
                         <div className='flex flex-col'>
                             <span className='text-left text-base-small font-bold uppercase 2xl:text-base'>Email Adress</span>
                             <a href="mailto:hola@nesmanpro.com">
@@ -141,18 +137,18 @@ export default function SideMenu({ className }) {
                                 </TextAnimate>
                             </a>
                         </div>
-                        <ul className='flex flex-nowrap justify-start gap-x-space-2xs'>
+                        <ul className='flex flex-nowrap justify-start gap-x-space-2xs '>
                             {socialLinks.map((link) => (
 
                                 <li key={link.label}
                                     onClick={() => closeMenu()}>
                                     <a
-                                        className='flex h-fit w-fit items-center justify-center rounded-full border-1 border-yellow-100 py-1.5 px-4'
+                                        className='flex h-fit w-fit items-center justify-center rounded-full border-1 border-yellow-100 py-.5 px-2 sm:py-1.5 sm:px-4 '
                                         target='_blank'
                                         href={link.url}
                                     >
                                         <TextAnimate>
-                                            <span className='font-mono font-medium text-yellow-50 uppercase'>{link.label}
+                                            <span className='font-mono font-medium text-yellow-50 text-sm sm:text-base uppercase'>{link.label}
                                             </span>
                                         </TextAnimate>
                                     </a>

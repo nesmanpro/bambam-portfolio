@@ -14,7 +14,7 @@ const worksItems = [
         title: 'Cycling Class',
         subtitle: 'React, Vite, Tailwind',
         categories: ['UI-UX', 'Development'],
-        year: '2024',
+        year: '2023',
         imgUrl: '/img/img-0.webp',
         bgImg: '/assets/14.jpg',
         url: 'https://ecommerce-roque.vercel.app/'
@@ -44,7 +44,7 @@ const worksItems = [
         title: "Nae Riviera Maya",
         subtitle: 'React, Vite, Tailwind',
         categories: ['UI-UX', 'Developing'],
-        year: '2025',
+        year: '2023',
         imgUrl: '/img/img-6.webp',
         bgImg: '/assets/14.jpg',
         url: 'https://www.naerivieramaya.com/'
@@ -70,11 +70,21 @@ const worksItems = [
         url: 'https://github.com/nesmanpro/avoris-ptech-waveless'
     },
     {
+        id: '10',
+        title: 'Smooth Loading',
+        subtitle: 'React, Vite, SASS, Framer Motion',
+        categories: ['Testing', 'Development'],
+        year: '2024',
+        imgUrl: '/img/img-9.webp',
+        bgImg: '/assets/15.jpg',
+        url: 'https://github.com/nesmanpro/smooth_loading'
+    },
+    {
         id: '7',
         title: 'Web Intro Animated ',
         subtitle: 'NextJS, GSAP, Tailwind',
         categories: ['UI-UX', 'Development'],
-        year: '2024',
+        year: '2025',
         imgUrl: '/img/img-1.webp',
         bgImg: '/assets/14.jpg',
         url: 'https://github.com/nesmanpro/gsap-react_intro_animation'
