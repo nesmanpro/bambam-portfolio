@@ -28,13 +28,13 @@ export const CustomCursor = ({ x, y, visible }) => {
     return (
         <div
             ref={cursorRef}
-            className="fixed size-[120px] z-100 bg-yellow-50 rounded-full flex justify-center items-center -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-0"
+            className="fixed size-[100px] z-100 bg-yellow-50 rounded-full flex justify-center items-center -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-0"
             style={{ left: x, top: y }}
         >
             <h3
                 ref={textRef}
                 className="font-bold text-lg">
-                Let's see!
+                View!
             </h3>
         </div>
     )
