@@ -13,6 +13,7 @@ import { Footer } from './components/organisms/Footer';
 import SideMenu from './components/organisms/SideMenu';
 import { useHeroScrollAnimation, useInitialLoading } from './hooks/animations/useHeroAnimation';
 import Preloader from './sections/Preloader';
+import { NewHero } from './sections/NewHero';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div ref={containerRef} id='home' className='w-screen h-screen z-0 relative '>
+      {/* <NewHero /> */}
       <Preloader preloaderRef={preloaderRef} />
       <header ref={navRef} className='tracking-body absolute top-0 z-40 w-full '>
         <Navbar className='px-8 md:px-17' />

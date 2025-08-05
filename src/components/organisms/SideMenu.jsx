@@ -51,6 +51,9 @@ export default function SideMenu({ className }) {
     const containerRef = useRef();
     const menuRef = useRef();
     const overlayRef = useRef();
+    const linksRef = useRef([]);
+    const mailsRef = useRef([]);
+    const socialsRef = useRef([]);
     const tlRef = useRef();
 
     const { isMenuOpen, closeMenu } = useMenuStore();
@@ -64,6 +67,9 @@ export default function SideMenu({ className }) {
             paused: true
         })
 
+        const footerMenuElements = [...mailsRef.current, ...socialsRef.current]
+        const links = [...linksRef.current]
+
 
         gsap.set(containerRef.current, {
             pointerEvents: 'none',
@@ -75,6 +81,12 @@ export default function SideMenu({ className }) {
         gsap.set(menuRef.current, {
             xPercent: 101
         })
+        gsap.set(links, {
+            y: 100,
+        })
+        gsap.set(footerMenuElements, {
+            y: 100,
+        })
 
         tl.to(containerRef.current, {
             pointerEvents: 'auto',
@@ -83,7 +95,12 @@ export default function SideMenu({ className }) {
             opacity: 1
         }, '<').to(menuRef.current, {
             xPercent: 0
-        })
+        }).to(links, {
+            y: 0,
+        }, '+=.1'
+        ).to(footerMenuElements, {
+            y: 0,
+        }, '+=.1')
 
         tlRef.current = tl;
     }, {})
@@ -116,10 +133,12 @@ export default function SideMenu({ className }) {
                     <nav className='h-full px-space-md text-menu font-bold uppercase leading-tight sm:px-space-xl flex flex-col justify-center mt-15 sm:mt-0 '>
                         <ul className='flex flex-col gap-y-0 sm:gap-y-space-3xs'>
 
-                            {navItems.map((item) => (
-                                <li key={item.label} onClick={() => closeMenu()} className='group relative flex w-fit items-center text-yellow-100 cursor-pointer'>
+                            {navItems.map((item, i) => (
+                                <li key={item.label} onClick={() => closeMenu()} className='group relative flex w-fit items-center text-yellow-100 cursor-pointer overflow-hidden'>
                                     <span className='invisible absolute inline-block h-3 w-0 bg-yellow-100 opacity-0 transition-all duration-700 ease-in-out group-hover:visible group-hover:w-7 group-hover:opacity-100'></span>
-                                    <a className='inline-block transition-transform duration-700 ease-in-out group-hover:translate-x-10' href={item.url}>
+                                    <a
+                                        ref={link => (linksRef.current[i] = link)}
+                                        className='inline-block transition-transform duration-700 ease-in-out group-hover:translate-x-10' href={item.url}>
                                         {item.label}
                                     </a>
                                 </li>
@@ -127,9 +146,12 @@ export default function SideMenu({ className }) {
                         </ul>
                     </nav>
                     <div className='flex flex-col items-start justify-start gap-y-space-sm px-space-md mb-space-sm sm:px-space-xl sm:pb-space-xl text-yellow-100'>
-                        <div className='flex flex-col'>
-                            <span className='text-left text-base-small font-bold uppercase 2xl:text-base'>Email Adress</span>
-                            <a href="mailto:hola@nesmanpro.com">
+                        <div className='flex flex-col overflow-hidden'>
+                            <span
+                                ref={el => (mailsRef.current[0] = el)}
+                                className='text-left text-base-small font-bold uppercase 2xl:text-base'>Email Adress</span>
+                            <a ref={el => (mailsRef.current[1] = el)}
+                                href="mailto:hola@nesmanpro.com">
                                 <TextAnimate>
                                     <span className='font-mono font-medium text-yellow-50'>
                                         hola@nesmanpro.com
@@ -138,11 +160,14 @@ export default function SideMenu({ className }) {
                             </a>
                         </div>
                         <ul className='flex flex-nowrap justify-start gap-x-space-2xs '>
-                            {socialLinks.map((link) => (
+                            {socialLinks.map((link, i) => (
 
-                                <li key={link.label}
+                                <li
+                                    className='overflow-hidden'
+                                    key={link.label}
                                     onClick={() => closeMenu()}>
                                     <a
+                                        ref={link => (socialsRef.current[i] = link)}
                                         className='flex h-fit w-fit items-center justify-center rounded-full border-1 border-yellow-100 py-.5 px-2 sm:py-1.5 sm:px-4 '
                                         target='_blank'
                                         href={link.url}
