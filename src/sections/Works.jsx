@@ -17,7 +17,8 @@ const worksItems = [
         year: '2023',
         imgUrl: '/img/img-0.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://ecommerce-roque.vercel.app/'
+        url: 'https://ecommerce-roque.vercel.app/',
+        textCursor: 'View Live!'
     },
     {
         id: '2',
@@ -27,7 +28,8 @@ const worksItems = [
         year: '2024',
         imgUrl: '/img/img-4.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://js-vanilla-scroll-transitions.vercel.app/'
+        url: 'https://js-vanilla-scroll-transitions.vercel.app/',
+        textCursor: 'View Live!'
     },
     {
         id: '3',
@@ -37,7 +39,8 @@ const worksItems = [
         year: '2025',
         imgUrl: '/img/img-5.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://github.com/nesmanpro/dev_Portfolio'
+        url: 'https://github.com/nesmanpro/dev_Portfolio',
+        textCursor: 'View GitHub!'
     },
     {
         id: '4',
@@ -47,7 +50,8 @@ const worksItems = [
         year: '2023',
         imgUrl: '/img/img-6.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://www.naerivieramaya.com/'
+        url: 'https://www.naerivieramaya.com/',
+        textCursor: 'View Live!'
     },
     {
         id: '5',
@@ -57,7 +61,8 @@ const worksItems = [
         year: '2025',
         imgUrl: '/img/img-8.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://github.com/nesmanpro/coffeeFront'
+        url: 'https://github.com/nesmanpro/coffeeFront',
+        textCursor: 'View GitHub!'
     },
     {
         id: '6',
@@ -67,7 +72,8 @@ const worksItems = [
         year: '2025',
         imgUrl: '/img/img-2.webp',
         bgImg: '/assets/15.jpg',
-        url: 'https://github.com/nesmanpro/avoris-ptech-waveless'
+        url: 'https://github.com/nesmanpro/avoris-ptech-waveless',
+        textCursor: 'View GitHub!'
     },
     {
         id: '10',
@@ -77,7 +83,8 @@ const worksItems = [
         year: '2024',
         imgUrl: '/img/img-9.webp',
         bgImg: '/assets/15.jpg',
-        url: 'https://github.com/nesmanpro/smooth_loading'
+        url: 'https://github.com/nesmanpro/smooth_loading',
+        textCursor: 'View GitHub!'
     },
     {
         id: '7',
@@ -87,7 +94,8 @@ const worksItems = [
         year: '2025',
         imgUrl: '/img/img-1.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://github.com/nesmanpro/gsap-react_intro_animation'
+        url: 'https://github.com/nesmanpro/gsap-react_intro_animation',
+        textCursor: 'View GitHub!'
     },
     {
         id: '8',
@@ -97,7 +105,8 @@ const worksItems = [
         year: '2024',
         imgUrl: '/img/img-7.webp',
         bgImg: '/assets/14.jpg',
-        url: 'https://js-vanilla-gsap-animations.vercel.app/'
+        url: 'https://js-vanilla-gsap-animations.vercel.app/',
+        textCursor: 'View Live!'
     },
     {
         id: '9',
@@ -107,7 +116,8 @@ const worksItems = [
         year: '2024',
         imgUrl: '/img/img-3.webp',
         bgImg: '/assets/12.jpg',
-        url: 'https://github.com/nesmanpro/vite-gsap-responsive-menu'
+        url: 'https://github.com/nesmanpro/vite-gsap-responsive-menu',
+        textCursor: 'View GitHub!'
     },
 ]
 
@@ -116,10 +126,17 @@ export default function Works() {
     const contRef = useRef(null)
     const numbersRef = useRef(null)
 
-    const [cursorVisible, setCursorVisible] = useState(false)
+    const [cursorVisible, setCursorVisible] = useState(false);
+    const [cursorText, setCursorText] = useState('');
 
-    const handleMouseEnter = () => setCursorVisible(true)
-    const handleMouseLeave = () => setCursorVisible(false)
+    const handleMouseEnter = (text) => {
+        setCursorVisible(true)
+        setCursorText(text)
+    }
+    const handleMouseLeave = () => {
+        setCursorVisible(false)
+        setCursorText('')
+    }
 
 
     useGSAP(() => {
@@ -186,7 +203,7 @@ export default function Works() {
                             <a
                                 href={work.url}
                                 target="_blank"
-                                onMouseEnter={handleMouseEnter}
+                                onMouseEnter={() => handleMouseEnter(work.textCursor)}
                                 onMouseLeave={handleMouseLeave}
                                 className="flex aspect-square items-center justify-center overflow-clip rounded-md p-space-md md:p-space-lg xl:p-space-2xl cursor-none relative">
                                 <img loading="lazy" className="absolute w-full h-full object-cover object-top" src={work.bgImg} alt={work.title} />
@@ -214,7 +231,7 @@ export default function Works() {
                 </aside>
             </div>
 
-            <CustomCursor x={x} y={y} visible={cursorVisible} />
+            <CustomCursor text={cursorText} x={x} y={y} visible={cursorVisible} />
         </SectionLayout>
 
     )

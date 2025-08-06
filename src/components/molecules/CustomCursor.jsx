@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
-export const CustomCursor = ({ x, y, visible }) => {
+export const CustomCursor = ({ text = 'View!', x, y, visible }) => {
 
     const cursorRef = useRef(null)
     const textRef = useRef(null)
@@ -33,8 +33,8 @@ export const CustomCursor = ({ x, y, visible }) => {
         >
             <h3
                 ref={textRef}
-                className="font-bold text-lg">
-                View!
+                className="font-bold text-lg text-center text-balance leading-5">
+                {text}
             </h3>
         </div>
     )
