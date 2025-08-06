@@ -90,17 +90,23 @@ export default function SideMenu({ className }) {
 
         tl.to(containerRef.current, {
             pointerEvents: 'auto',
-        }).to(overlayRef.current, {
-            display: 'flex',
-            opacity: 1
-        }, '<').to(menuRef.current, {
-            xPercent: 0
-        }).to(links, {
-            y: 0,
-        }, '+=.1'
-        ).to(footerMenuElements, {
-            y: 0,
-        }, '+=.1')
+        })
+            .to(overlayRef.current, {
+                display: 'flex',
+                opacity: 1
+            }, '<')
+            .to(menuRef.current, {
+                xPercent: 0
+            }, '<')
+            .to(links, {
+                y: 0,
+                duration: .3,
+                stagger: 0.05
+            }, '+=0.05')
+            .to(footerMenuElements, {
+                y: 0,
+                duration: .6,
+            }, '<+=.1')
 
         tlRef.current = tl;
     }, {})
