@@ -16,7 +16,7 @@ jobs:
     env:
       TARGET: /srv/projects/dev-portfolio
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Sincronizar código
         run: rsync -a --delete --exclude=.git --exclude=node_modules --exclude=dist ./ "$TARGET/"
