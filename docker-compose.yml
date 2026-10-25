@@ -1,0 +1,17 @@
+# Despliegue en el VPS (/srv/projects/dev-portfolio), detrás de nginx_proxy en nesmanpro.com/dev/
+services:
+  dev-portfolio-front:
+    build:
+      context: .
+      args:
+        VITE_BASE: /dev/
+    container_name: dev_portfolio_front
+    restart: always
+    ports:
+      - "5273:80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

@@ -1,0 +1,38 @@
+name: Deploy VPS
+
+# Solo push a main o lanzamiento manual: nunca PRs (el runner vive en el VPS)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, vps]
+    env:
+      TARGET: /srv/projects/dev-portfolio
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sincronizar código
+        run: rsync -a --delete --exclude=.git --exclude=node_modules --exclude=dist ./ "$TARGET/"
+
+      - name: Construir y levantar
+        working-directory: ${{ env.TARGET }}
+        run: |
+          docker compose up -d --build
+          docker image prune -f
+
+      - name: Comprobar
+        run: |
+          for i in $(seq 1 10); do
+            curl -fsS -o /dev/null http://localhost:5273/ && break
+            sleep 2
+          done
+          # El HTML debe pedir los assets bajo /dev/ (si no, la web sale en blanco)
+          curl -fsS http://localhost:5273/ | grep -q '/dev/assets/'
+          curl -fsS -o /dev/null http://localhost:5273/profilepic.jpg

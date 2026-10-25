@@ -8,6 +8,9 @@ import useMousePosition from "../hooks/animations/useMousePosition"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
+// Raíz pública: "/" en Vercel, "/dev/" en el VPS (VITE_BASE)
+const BASE = import.meta.env.BASE_URL
+
 const worksItems = [
     {
         id: '1',
@@ -15,8 +18,8 @@ const worksItems = [
         subtitle: 'React, Vite, Tailwind',
         categories: ['UI-UX', 'Development'],
         year: '2023',
-        imgUrl: '/img/img-0.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-0.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://ecommerce-roque.vercel.app/',
         textCursor: 'View Live!'
     },
@@ -26,8 +29,8 @@ const worksItems = [
         subtitle: 'Vanilla JS, GSAP, SASS',
         categories: ['UI-UX', 'Developing'],
         year: '2024',
-        imgUrl: '/img/img-4.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-4.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://js-vanilla-scroll-transitions.vercel.app/',
         textCursor: 'View Live!'
     },
@@ -37,8 +40,8 @@ const worksItems = [
         subtitle: 'NextJS, Typescript, Tailwind, Framer Motion',
         categories: ['UI-UX', 'Developing'],
         year: '2025',
-        imgUrl: '/img/img-5.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-5.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://github.com/nesmanpro/dev_Portfolio',
         textCursor: 'View GitHub!'
     },
@@ -48,8 +51,8 @@ const worksItems = [
         subtitle: 'React, Vite, Tailwind',
         categories: ['UI-UX', 'Developing'],
         year: '2023',
-        imgUrl: '/img/img-6.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-6.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://www.naerivieramaya.com/',
         textCursor: 'View Live!'
     },
@@ -59,8 +62,8 @@ const worksItems = [
         subtitle: 'NextJS, Typescript, Tailwind, Zustand',
         categories: ['UI-UX', 'Developing'],
         year: '2025',
-        imgUrl: '/img/img-8.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-8.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://github.com/nesmanpro/coffeeFront',
         textCursor: 'View GitHub!'
     },
@@ -70,8 +73,8 @@ const worksItems = [
         subtitle: 'Vanilla JS, CSS, HTML',
         categories: ['Testing', 'Development'],
         year: '2025',
-        imgUrl: '/img/img-2.webp',
-        bgImg: '/assets/15.jpg',
+        imgUrl: `${BASE}img/img-2.webp`,
+        bgImg: `${BASE}assets/15.jpg`,
         url: 'https://github.com/nesmanpro/avoris-ptech-waveless',
         textCursor: 'View GitHub!'
     },
@@ -81,8 +84,8 @@ const worksItems = [
         subtitle: 'React, Vite, SASS, Framer Motion',
         categories: ['Testing', 'Development'],
         year: '2024',
-        imgUrl: '/img/img-9.webp',
-        bgImg: '/assets/15.jpg',
+        imgUrl: `${BASE}img/img-9.webp`,
+        bgImg: `${BASE}assets/15.jpg`,
         url: 'https://github.com/nesmanpro/smooth_loading',
         textCursor: 'View GitHub!'
     },
@@ -92,8 +95,8 @@ const worksItems = [
         subtitle: 'NextJS, GSAP, Tailwind',
         categories: ['UI-UX', 'Development'],
         year: '2025',
-        imgUrl: '/img/img-1.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-1.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://github.com/nesmanpro/gsap-react_intro_animation',
         textCursor: 'View GitHub!'
     },
@@ -103,8 +106,8 @@ const worksItems = [
         subtitle: 'React, GSAP, NextJS',
         categories: ['UI-UX', 'Development'],
         year: '2024',
-        imgUrl: '/img/img-7.webp',
-        bgImg: '/assets/14.jpg',
+        imgUrl: `${BASE}img/img-7.webp`,
+        bgImg: `${BASE}assets/14.jpg`,
         url: 'https://js-vanilla-gsap-animations.vercel.app/',
         textCursor: 'View Live!'
     },
@@ -114,8 +117,8 @@ const worksItems = [
         subtitle: 'Vanilla JS, Vite, GSAP',
         categories: ['UI-UX', 'Developing'],
         year: '2024',
-        imgUrl: '/img/img-3.webp',
-        bgImg: '/assets/12.jpg',
+        imgUrl: `${BASE}img/img-3.webp`,
+        bgImg: `${BASE}assets/12.jpg`,
         url: 'https://github.com/nesmanpro/vite-gsap-responsive-menu',
         textCursor: 'View GitHub!'
     },

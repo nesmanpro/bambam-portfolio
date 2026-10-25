@@ -109,6 +109,7 @@ export default function SideMenu({ className }) {
             }, '<+=.1')
 
         tlRef.current = tl;
+
     }, {})
 
     useEffect(() => {
@@ -136,17 +137,24 @@ export default function SideMenu({ className }) {
                     ref={menuRef}
                     className='pointer-events-auto z-20 flex w-full sm:w-[clamp(25rem,40vw,70rem)] max-w-2xl flex-col justify-end overflow-hidden rounded-md bg-gray-900 xl:max-w-3xl 3xl:max-w-4xl'>
 
-                    <nav className='h-full px-space-md text-menu font-bold uppercase leading-tight sm:px-space-xl flex flex-col justify-center mt-15 sm:mt-0 '>
+                    <nav className='group/nav h-full px-space-md text-menu font-bold uppercase leading-tight sm:px-space-xl flex flex-col justify-center mt-15 sm:mt-0 '>
                         <ul className='flex flex-col gap-y-0 sm:gap-y-space-3xs'>
 
                             {navItems.map((item, i) => (
-                                <li key={item.label} onClick={() => closeMenu()} className='group relative flex w-fit items-center text-yellow-100 cursor-pointer overflow-hidden'>
+                                <li
+                                    key={item.label}
+                                    onClick={() => closeMenu()}
+                                    className='group relative flex w-fit items-center text-yellow-100 cursor-pointer overflow-hidden group-hover/nav:overflow-visible'>
                                     <span className='invisible absolute inline-block h-3 w-0 bg-yellow-100 opacity-0 transition-all duration-700 ease-in-out group-hover:visible group-hover:w-7 group-hover:opacity-100'></span>
-                                    <a
-                                        ref={link => (linksRef.current[i] = link)}
-                                        className='inline-block transition-transform duration-700 ease-in-out group-hover:translate-x-10' href={item.url}>
-                                        {item.label}
-                                    </a>
+
+                                    <span className='transition-transform duration-700 ease-in-out group-hover:translate-x-10'>
+
+                                        <a
+                                            ref={link => (linksRef.current[i] = link)}
+                                            className='inline-block ' href={item.url}>
+                                            {item.label}
+                                        </a>
+                                    </span>
                                 </li>
                             ))}
                         </ul>
